@@ -32,7 +32,7 @@ poetry run uvicorn sketch_a.backend.main:app --reload
 
 ### References
 
-- https://fastapi.tiangolo.com/tutorial/
+- https://fastapi.tiangolo.com/tutorial/first-steps/
 - https://www.starlette.io/
 - https://python-poetry.org/docs/basic-usage/
 

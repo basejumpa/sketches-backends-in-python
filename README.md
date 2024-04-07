@@ -1,8 +1,10 @@
 # Sketches of backends written in Python
 
 - Sketch a: Serve directory for static files.
+- Sketch b: Call external program (synchronously)
 
-## Examine sketches
+
+## Examine a sketch
 
 First stablish prerequisites
 
@@ -19,6 +21,15 @@ cd sketch-a
 ```
 
 and consult the sketch's `README.md`.
+
+
+## Cleanup before next sketch
+
+TODO: Descripe here.
+
+```bash
+rm -rf poetry.lock .venv/
+```
 
 
 ## Contribute
