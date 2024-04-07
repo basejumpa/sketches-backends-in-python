@@ -2,20 +2,11 @@
 
 Serve static files (e.g., images, CSS, JS) specifically.
 
-## Establish prerequisites
-
-```bash
-pip install pipx
-pipx ensurepath
-pipx install poetry
-```
-
 ## Run
 
 In the Terminal, do
 
 ``` bash
-cd sketch-a
 poetry install
 ```
 

@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "sketch-a"
+name = "{{cookiecutter.__python_project}}"
 version = "0.1.0"
 description = ""
 authors = ["Alexander Mann-Wahrenberg <alexander.mannwahrenberg@gmail.com>"]
@@ -8,8 +8,6 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-fastapi = "^0.110.1"
-uvicorn = "^0.29.0"
 
 [build-system]
 requires = ["poetry-core"]
