@@ -1,0 +1,12 @@
+# Ignore local virtual environment
+.venv/
+
+# Ignore user specific VSCode stuff
+.extensions/
+.user/
+
+# Ignore python binaries
+**/__pycache__/
+*.pyc
+
+poetry.lock

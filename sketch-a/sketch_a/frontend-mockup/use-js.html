@@ -1,0 +1,15 @@
+<html>
+<head>
+    <script type="module">
+        import { getText } from './some.js';
+
+        window.onload = function() {
+            const textFromJS = getText();
+            document.getElementById('display-text').textContent = textFromJS;
+        };
+    </script>
+</head>
+<body>
+    <p id="display-text">Text will be replaced</p>
+</body>
+</html>

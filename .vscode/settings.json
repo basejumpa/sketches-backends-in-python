@@ -1,0 +1,8 @@
+{
+    "files.exclude": {
+        ".user/": true,
+        ".extensions/": true,
+        "**/__pycache__/": true,
+        "**/*.pyc": true,
+    }
+}

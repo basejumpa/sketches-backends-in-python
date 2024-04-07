@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "sketch-a"
+version = "0.1.0"
+description = ""
+authors = ["Alexander Mann-Wahrenberg <alexander.mannwahrenberg@gmail.com>"]
+license = "CC BY-SA 4.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.110.1"
+uvicorn = "^0.29.0"
+# python-multipart = "^0.0.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
