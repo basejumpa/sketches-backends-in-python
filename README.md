@@ -1,7 +1,9 @@
 # Sketches of backends written in Python
 
 - Sketch a: Serve directory for static files.
-- Sketch b: Call external program (synchronously)
+- Sketch b: Call external program in own process (synchronously)
+- Sketch c: Trigger external program as own process asynchronously (but do not capture anything from it)
+- Sketch d: Trigger external program in own process, do something in parallel, then wait for completion.
 
 
 ## Examine a sketch
@@ -14,14 +16,7 @@ pipx ensurepath
 pipx install poetry
 ```
 
-then enter the directory of a sketch
-
-```bash
-cd sketch-a
-```
-
-and consult the sketch's `README.md`.
-
+Consult the sketch's `sketch-i/README.md`.
 
 ## Cleanup before next sketch
 

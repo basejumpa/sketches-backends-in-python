@@ -1,6 +1,6 @@
 # Sketch sketch-c
 
-Trigger external program asynchronously (but do not capture anything from it)
+Trigger external program as own process asynchronously (but do not capture anything from it)
 
 ## Establish prerequisites
 
@@ -127,3 +127,45 @@ with open('input_file.txt', 'rb') as input_file:
 In this case, the subprocess reads its input directly from `input_file.txt`. The file is opened in binary mode (`'rb'`) because subprocesses expect byte streams for their inputs.
 
 Both methods allow you to provide `stdin` input to a subprocess, offering flexibility depending on your specific requirements, whether it's programmatically sending data directly or redirecting input from a file.
+
+o capture `stdout` and `stderr` from a subprocess in Python, you can use the `subprocess.Popen` class with the `stdout` and `stderr` parameters set to `subprocess.PIPE`. This configuration allows you to capture the standard output and standard error streams of the subprocess.
+
+Here’s how to execute a subprocess, capture its `stdout` and `stderr`, and then read those outputs:
+
+```python
+import subprocess
+
+# Define your command and arguments
+command = ["your_command", "arg1", "arg2"]
+
+# Start the subprocess with stdout and stderr redirected
+process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+# Wait for the subprocess to finish and capture stdout and stderr
+stdout_data, stderr_data = process.communicate()
+
+# Decode the byte strings to get regular strings, if necessary
+stdout_data = stdout_data.decode('utf-8')
+stderr_data = stderr_data.decode('utf-8')
+
+# Use the captured output
+print("STDOUT:")
+print(stdout_data)
+print("STDERR:")
+print(stderr_data)
+
+# Optionally, get the exit code of the subprocess
+exit_code = process.returncode
+print(f"Exit Code: {exit_code}")
+
+```
+
+Key Points:
+
+- stdout=subprocess.PIPE and stderr=subprocess.PIPE tell Popen to capture the output streams.
+- process.communicate() waits for the subprocess to finish and returns a tuple (stdout_data, stderr_data). It's the recommended way to capture output and errors, especially when you need to capture both simultaneously to avoid deadlocks.
+- The output data (stdout_data and stderr_data) are bytes objects. If you're working with text output, you'll likely want to decode these bytes to strings using .decode('utf-8') or another appropriate encoding.
+- process.returncode contains the exit code of the subprocess after it has finished. A return code of 0 usually indicates success, while any non-zero value indicates an error.
+
+Make sure to replace `"your_command"`, `"arg1"`, and `"arg2"` with the actual command and arguments you wish to execute. This approach is quite flexible and allows for robust handling of subprocesses in Python scripts.
+

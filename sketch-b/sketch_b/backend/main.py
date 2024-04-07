@@ -14,9 +14,13 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    result = subprocess.run(command,
-                            input=stdin,
-                            text=False, # this corresponds with the "b" of the assignment of variable stdin
-                            capture_output=True
-                            )
-    return {"stdin": stdin, "result": result}
+    result = subprocess.run(
+        command,
+        input=stdin,
+        text=False, # this corresponds with the "b" of the assignment of variable stdin
+        capture_output=True
+    )
+    return {
+        "stdin": stdin,
+        "result": result
+    }

@@ -16,7 +16,7 @@ In the Terminal, do
 
 ``` bash
 cd {{ cookiecutter.__python_project }}
-poetry install
+poetry update
 ```
 
 and then

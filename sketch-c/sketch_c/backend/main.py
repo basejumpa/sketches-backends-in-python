@@ -4,7 +4,7 @@ import subprocess
 
 program = "some_program.sh"
 arguments = ["arg1", "--arg2=value2"]
-stdin = b"some input data as bytes"
+stdin_data = b"some input data as bytes"
 
 this_file_directory_full_path = os.path.dirname(os.path.realpath(__file__))
 program_with_path = os.path.join(this_file_directory_full_path, program)
@@ -19,11 +19,11 @@ async def root():
         stdin=subprocess.PIPE
     )
 
-    process.stdin.write(stdin)
+    process.stdin.write(stdin_data)
     process.stdin.close()
 
     return {
         "program": program,
         "arguments": arguments,
-        "stdin": stdin
+        "stdin": stdin_data
     }
