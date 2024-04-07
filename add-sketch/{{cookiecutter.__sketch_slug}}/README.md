@@ -15,7 +15,7 @@ pipx install poetry
 In the Terminal, do
 
 ``` bash
-cd {{ cookiecutter.__python_project }}
+cd {{ cookiecutter.__sketch_slug }}
 poetry update
 ```
 

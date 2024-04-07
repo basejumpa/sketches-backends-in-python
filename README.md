@@ -1,9 +1,9 @@
 # Sketches of backends written in Python
 
 - Sketch a: Serve directory for static files.
-- Sketch b: Call external program in own process (synchronously)
-- Sketch c: Trigger external program as own process asynchronously (but do not capture anything from it)
-- Sketch d: Trigger external program in own process, do something in parallel, then wait for completion.
+- Sketch b: Call external program in own process (synchronously).
+- Sketch c: Trigger external program as own process asynchronously (but do not capture anything from it).
+- Sketch d: Trigger external program in own process, do something in parallel, then wait for completion and capture output.
 
 
 ## Examine a sketch
@@ -48,3 +48,12 @@ cd into the newly created sketch directory.
 Elaborate the sketch.
 
 Create a pull-request.
+
+### Additional Comments
+
+Following command executed in the repository's root folder removes all virtual environments.
+
+```bash
+find . \( -name 'poetry.lock' -o -name '.venv' \) -exec rm -rf {} +
+```
+

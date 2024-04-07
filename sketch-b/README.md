@@ -1,12 +1,13 @@
 # Sketch sketch-b
 
-Call external program in own process (synchronously)
+Call external program in own process (synchronously).
 
 ## Run
 
 In the Terminal, do
 
 ``` bash
+cd sketch-b
 poetry install
 ```
 

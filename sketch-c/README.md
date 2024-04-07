@@ -1,6 +1,6 @@
 # Sketch sketch-c
 
-Trigger external program as own process asynchronously (but do not capture anything from it)
+Trigger external program as own process asynchronously (but do not capture anything from it).
 
 ## Establish prerequisites
 
@@ -15,7 +15,7 @@ pipx install poetry
 In the Terminal, do
 
 ``` bash
-cd sketch_c
+cd sketch-c
 poetry update
 ```
 

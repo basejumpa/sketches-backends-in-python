@@ -7,6 +7,7 @@ Serve static files (e.g., images, CSS, JS) specifically.
 In the Terminal, do
 
 ``` bash
+cd sketch-a
 poetry install
 ```
 
