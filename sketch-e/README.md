@@ -2,14 +2,6 @@
 
 Communicate with frontend via REST, front- and backend use json, backend uses pydantic dataclasses to define protocol.
 
-## Establish prerequisites
-
-```bash
-pip install pipx
-pipx ensurepath
-pipx install poetry
-```
-
 ## Run
 
 In the Terminal, do
