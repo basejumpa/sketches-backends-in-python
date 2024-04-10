@@ -4,9 +4,9 @@
 - Sketch b: Call external program in own process (synchronously).
 - Sketch c: Trigger external program as own process asynchronously (but do not capture anything from it).
 - Sketch d: Trigger external program in own process, do something in parallel, then wait for completion and capture output.
-- Sketch e: Communicate with frontend via REST
-- Sketch f: Communicate with frontend via websocket synchronously
-- Sketch g: Communicate with frontend via websocket synchronously but do not block server (use async capabilities of FastAPI)
+- Sketch e: Communicate with frontend via REST, front- and backend use json, backend uses pydantic dataclasses to define protocol.
+- Sketch i: TODO Communicate with frontend via websocket synchronously
+- Sketch i: TODO Communicate with frontend via websocket synchronously but do not block server (use async capabilities of FastAPI)
 
 
 ## Examine a sketch

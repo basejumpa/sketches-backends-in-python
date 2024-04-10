@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "sketch_e"
+version = "0.1.0"
+description = ""
+authors = ["Alexander Mann-Wahrenberg <alexander.mannwahrenberg@gmail.com>"]
+license = "CC BY-SA 4.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+uvicorn = "^0.29.0"
+fastapi = "^0.110.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
