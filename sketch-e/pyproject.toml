@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "{{cookiecutter.__python_project}}"
+name = "sketch_e"
 version = "0.1.0"
 description = ""
 authors = ["Alexander Mann-Wahrenberg <alexander.mannwahrenberg@gmail.com>"]

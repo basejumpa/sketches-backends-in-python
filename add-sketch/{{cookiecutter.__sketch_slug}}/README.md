@@ -2,14 +2,6 @@
 
 replace_by_matter
 
-## Establish prerequisites
-
-```bash
-pip install pipx
-pipx ensurepath
-pipx install poetry
-```
-
 ## Run
 
 In the Terminal, do
