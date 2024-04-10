@@ -1,5 +1,5 @@
 {
-    "sketch_name": "sketch-z",
+    "sketch_name": "sketch-?",
     "__sketch_slug": "{{ cookiecutter.sketch_name }}",
     "__python_project": "{{ cookiecutter.sketch_name.replace('-', '_') }}"
 }

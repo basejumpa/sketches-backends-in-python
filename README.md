@@ -19,40 +19,10 @@ pipx ensurepath
 pipx install poetry
 ```
 
-Consult the sketch's `sketch-i/README.md`.
+Consult the sketch's `sketch-?/README.md`.
+
 
 ## Cleanup before next sketch
-
-TODO: Descripe here.
-
-```bash
-rm -rf poetry.lock .venv/
-```
-
-
-## Contribute
-
-Establish Prerequisites
-
-```bash
-pip install -r requirements.txt
-```
-
-Add boilerplate for a new sketch cd into repository root and run
-
-```bash
-cookiecutter add-sketch
-```
-
-Here in this global README.md, in the upper list append the sketch.
-
-cd into the newly created sketch directory.
-
-Elaborate the sketch.
-
-Create a pull-request.
-
-### Additional Comments
 
 Following command executed in the repository's root folder removes all virtual environments.
 
@@ -60,3 +30,23 @@ Following command executed in the repository's root folder removes all virtual e
 find . \( -name 'poetry.lock' -o -name '.venv' \) -exec rm -rf {} +
 ```
 
+
+## Contribute
+
+Here in this global README.md, in the upper list append the sketch.
+
+Add boilerplate for a new sketch cd into repository root and run
+
+```bash
+cookiecutter add-sketch
+```
+
+- cd into the newly created sketch directory.
+- Elaborate your sketch.
+- Create a fork.
+- Talk to me by means of a pull-request.
+
+
+### Additional Comments
+
+None
