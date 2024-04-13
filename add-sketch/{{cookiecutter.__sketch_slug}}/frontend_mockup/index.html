@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ cookiecutter.sketch_name }}</title>
+    <!-- Load React and ReactDOM from a CDN -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Babel Script for JSX translation -->
+    <script src="https://unpkg.com/@babel/standalone@7.15.3/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        /**
+         * Frontend mockup for {{ cookiecutter.sketch_name }} as a mini React application in a Single HTML file
+         *
+         * This mini React application using React, rendered
+         * within a single HTML file. It includes necessary libraries from CDNs:
+         * 1. React - The core React library.
+         * 2. ReactDOM - Provides DOM-specific methods that can be used at the top level of a web app.
+         * 3. Babel - Allows JSX syntax to be written and used directly in the browser.
+         *
+         * The React component `App` is defined as a simple functional component that returns
+         * an HTML element (h1 tag) displaying "{{ cookiecutter.sketch_name }}". This component is then rendered
+         * into a 'div' with the id 'root' using ReactDOM.render.
+         *
+         * This setup is ideal for small projects, learning environments, or quick prototypes.
+         */
+
+        // Define a simple React component
+        function App() {
+            return <h1>{{ cookiecutter.sketch_name }}</h1>;
+        }
+
+        // Render the App component inside the root div
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
