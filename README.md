@@ -41,6 +41,7 @@ Here in this global README.md, in the upper list append the sketch.
 Add boilerplate for a new sketch cd into repository root and run
 
 ```bash
+pipx install cookiecutter
 cookiecutter add-sketch
 ```
 
