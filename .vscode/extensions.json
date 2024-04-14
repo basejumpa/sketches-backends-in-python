@@ -1,6 +1,9 @@
 {
     "recommendations": [
         "donjayamanne.python-extension-pack",
-        "editorconfig.editorconfig"
+        "EditorConfig.EditorConfig",
+        "donjayamanne.python-extension-pack",
+        "ms-python.pylint",
+        "njpwerner.autodocstring"
     ]
 }

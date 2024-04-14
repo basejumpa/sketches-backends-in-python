@@ -8,7 +8,10 @@
 		"vscode": {
 			"extensions": [
 				"donjayamanne.python-extension-pack",
-				"EditorConfig.EditorConfig"
+				"EditorConfig.EditorConfig",
+                "donjayamanne.python-extension-pack",
+                "ms-python.pylint",
+                "njpwerner.autodocstring"
 			]
 		}
 	}
