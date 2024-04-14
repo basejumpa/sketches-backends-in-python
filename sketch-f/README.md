@@ -14,7 +14,7 @@ poetry update
 and then start the **backend** by doing
 
 ```bash
-poetry run python -m sketch_f.backend
+poetry run python -m backend
 ```
 
 Then, in Terminal seperate from the Terminal you started the backend, start the **frontend** mockup by either
