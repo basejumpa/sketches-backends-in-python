@@ -8,6 +8,11 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+grpcio = "^1.62.1"
+python-dotenv = "^1.0.1"
+
+[tool.poetry.group.dev.dependencies]
+grpcio-tools = "^1.62.1"
 
 [build-system]
 requires = ["poetry-core"]
