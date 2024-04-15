@@ -1,0 +1,2 @@
+# Ignore the generated code of ProtoBuf / gRPC
+**/*_pb2*.py

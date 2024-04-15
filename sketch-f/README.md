@@ -1,6 +1,6 @@
 # Sketch sketch-f
 
-replace_by_matter
+Using gRPC: Receive text message and respond with text message.
 
 ## Run
 
@@ -43,3 +43,12 @@ python3 -m http.server --directory frontend_mockup
 ### Bycatches
 
 ### Additional Comments
+
+```bash
+@basejumpa ➜ /workspaces/experiments-backends-in-python/sketch-f $
+poetry run python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. protocols/*.proto
+
+
+ ```
+
+

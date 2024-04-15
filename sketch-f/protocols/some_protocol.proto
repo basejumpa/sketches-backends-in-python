@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package some_protocol;
+
+service SomeService {
+    // Synchronous rpc
+    rpc some_rpc (some_rpc__args) returns (some_rpc__return) {}
+}
+
+message some_rpc__args {
+    string some_text = 1;
+}
+
+message some_rpc__return {
+    string some_text = 1;
+}
