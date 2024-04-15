@@ -17,18 +17,11 @@ and then start the **backend** by doing
 poetry run python -m backend
 ```
 
-Then, in Terminal seperate from the Terminal you started the backend, start the **frontend** mockup by either
+Then, in Terminal seperate from the Terminal you started the backend, start the **frontend** mockup by
 
 ```bash
 poetry run python -m frontend_mockup
 ```
-
-or
-
-```bash
-python3 -m http.server --directory frontend_mockup
-```
-
 
 ## Investigate
 
