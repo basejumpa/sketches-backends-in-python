@@ -1,11 +1,11 @@
 // src/App.js
 import React from 'react';
-import ThreeDViewer from './ThreeDViewer';
+import ModelViewer from './ModelViewer';
 
 function App() {
   return (
     <div className="App">
-      <ThreeDViewer />
+      <ModelViewer />
     </div>
   );
 }
