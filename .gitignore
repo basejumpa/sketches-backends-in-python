@@ -10,3 +10,7 @@
 *.pyc
 
 poetry.lock
+
+# Node.js specific stuff
+**/node_modules/
+

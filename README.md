@@ -6,11 +6,12 @@
 - Sketch d: Using FastAPI to: Trigger external program in own process, do something in parallel, then wait for completion and capture output.
 - Sketch e: Using FastAPI to: Communicate with frontend via REST, front- and backend use json, backend uses pydantic dataclasses to define protocol.
 - Sketch f: Using gRPC: Receive text message and respond with text message.
+- Sketch g: Serve glTF files. Use Node.js
 - Sketch i: TODO Using gRPC: Receive json message, interpret the message and respond with json message.
 - Sketch i: TODO Using gRPC: Receive json message, interpret the message, call external program to calculate response and send response as a json message.
 - Sketch i: POSTPONED Using FastAPI to: Communicate with frontend via websocket synchronously
 - Sketch i: POSTPONED Using FastAPI to: Communicate with frontend via websocket synchronously but do not block server (use async capabilities of FastAPI)
-
+- Sketch i:
 
 ## Examine a sketch
 
