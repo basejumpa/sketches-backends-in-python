@@ -18,8 +18,6 @@ function Model({ onVertexSelect, selectedVertex, setModelCenter }) {
       ref.current.traverse((child) => {
         if (child.isMesh) {
           child.material.wireframe = true;
-          child.material.opacity = 0.3;
-          child.material.transparent = false;
 
           const position = child.geometry.attributes.position;
           for (let i = 0; i < position.count; i++) {
@@ -31,6 +29,14 @@ function Model({ onVertexSelect, selectedVertex, setModelCenter }) {
       });
       setVertices(tempVertices);
       setModelCenter(center);
+
+      // Add axes helper to the model
+      const axesHelper = new THREE.AxesHelper(1);
+      ref.current.add(axesHelper);
+
+      // Apply rotation to the model
+      ref.current.rotation.z =  1 * Math.PI / 2; // 90 degrees
+      ref.current.rotation.x = -1 * Math.PI / 2; // 90 degrees
     }
   }, [ref, setModelCenter]);
 
@@ -61,12 +67,26 @@ function Model({ onVertexSelect, selectedVertex, setModelCenter }) {
       <primitive object={scene} ref={ref} onPointerDown={handlePointerDown} />
       {vertices.map((vertex, index) => (
         <mesh key={index} position={vertex}>
-          <sphereGeometry args={[0.005, 16, 16]} />
+          <sphereGeometry args={[0.05, 16, 16]} />
           <meshBasicMaterial color={selectedVertex && selectedVertex.equals(vertex) ? 'red' : 'black'} />
         </mesh>
       ))}
     </>
   );
+}
+
+function CameraAxesHelper() {
+  const { camera, scene } = useThree();
+
+  useEffect(() => {
+    const cameraAxesHelper = new THREE.AxesHelper(2);
+    scene.add(cameraAxesHelper);
+    return () => {
+      scene.remove(cameraAxesHelper);
+    };
+  }, [camera, scene]);
+
+  return null;
 }
 
 function ThreeDViewer() {
@@ -91,6 +111,7 @@ function ThreeDViewer() {
       <pointLight position={[10, 10, 10]} />
       <Model onVertexSelect={handleVertexSelect} selectedVertex={selectedVertex} setModelCenter={setModelCenter} />
       <OrbitControls ref={controlsRef} />
+      <CameraAxesHelper />
     </Canvas>
   );
 }
