@@ -89,6 +89,17 @@ function CameraAxesHelper() {
   return null;
 }
 
+
+function Highlight({ position }) {
+    return (
+      <mesh position={position}>
+        <sphereGeometry args={[0.01, 16, 16]} />
+        <meshBasicMaterial color="red" />
+      </mesh>
+    );
+  }
+
+
 function ThreeDViewer() {
   const [selectedVertex, setSelectedVertex] = useState(null);
   const [modelCenter, setModelCenter] = useState(new THREE.Vector3(0, 0, 0));
@@ -110,8 +121,8 @@ function ThreeDViewer() {
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
       <Model onVertexSelect={handleVertexSelect} selectedVertex={selectedVertex} setModelCenter={setModelCenter} />
+      {selectedVertex && <Highlight position={selectedVertex} />}
       <OrbitControls ref={controlsRef} />
-      <CameraAxesHelper />
     </Canvas>
   );
 }
