@@ -1,6 +1,6 @@
 // src/ThreeDViewer.js
 import React, { useRef, useState } from 'react';
-import { Canvas, useFrame, extend, useThree } from '@react-three/fiber';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 
@@ -45,6 +45,15 @@ function Model({ onVertexSelect }) {
   );
 }
 
+function Highlight({ position }) {
+  return (
+    <mesh position={position}>
+      <sphereGeometry args={[0.01, 16, 16]} />
+      <meshBasicMaterial color="red" />
+    </mesh>
+  );
+}
+
 function ThreeDViewer() {
   const [selectedVertex, setSelectedVertex] = useState(null);
 
@@ -58,6 +67,7 @@ function ThreeDViewer() {
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
       <Model onVertexSelect={handleVertexSelect} />
+      {selectedVertex && <Highlight position={selectedVertex} />}
       <OrbitControls />
     </Canvas>
   );
