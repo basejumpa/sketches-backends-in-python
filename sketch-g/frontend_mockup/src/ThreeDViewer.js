@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 
-function Model({ onVertexSelect, selectedVertex }) {
+function Model({ onVertexSelect, selectedVertex, setModelCenter }) {
   const { scene } = useGLTF('/model.glb');
   const ref = useRef();
 
@@ -12,11 +12,14 @@ function Model({ onVertexSelect, selectedVertex }) {
   useEffect(() => {
     if (ref.current) {
       const tempVertices = [];
+      const box = new THREE.Box3().setFromObject(ref.current);
+      const center = box.getCenter(new THREE.Vector3());
+
       ref.current.traverse((child) => {
         if (child.isMesh) {
-          child.material.wireframe = false;
+          child.material.wireframe = true;
           child.material.opacity = 0.3;
-          child.material.transparent = true;
+          child.material.transparent = false;
 
           const position = child.geometry.attributes.position;
           for (let i = 0; i < position.count; i++) {
@@ -27,8 +30,9 @@ function Model({ onVertexSelect, selectedVertex }) {
         }
       });
       setVertices(tempVertices);
+      setModelCenter(center);
     }
-  }, [ref]);
+  }, [ref, setModelCenter]);
 
   const handlePointerDown = (event) => {
     const mesh = event.object;
@@ -67,18 +71,26 @@ function Model({ onVertexSelect, selectedVertex }) {
 
 function ThreeDViewer() {
   const [selectedVertex, setSelectedVertex] = useState(null);
+  const [modelCenter, setModelCenter] = useState(new THREE.Vector3(0, 0, 0));
+  const controlsRef = useRef();
 
   const handleVertexSelect = (vertex) => {
     setSelectedVertex(vertex);
     console.log('Selected Vertex:', vertex);
   };
 
+  useEffect(() => {
+    if (controlsRef.current) {
+      controlsRef.current.target.set(modelCenter.x, modelCenter.y, modelCenter.z);
+    }
+  }, [modelCenter]);
+
   return (
     <Canvas style={{ height: '100vh' }}>
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} />
-      <Model onVertexSelect={handleVertexSelect} selectedVertex={selectedVertex} />
-      <OrbitControls />
+      <Model onVertexSelect={handleVertexSelect} selectedVertex={selectedVertex} setModelCenter={setModelCenter} />
+      <OrbitControls ref={controlsRef} />
     </Canvas>
   );
 }
