@@ -1,11 +1,11 @@
 // src/App.js
 import React from 'react';
-import WireframeViewer from './WireframeViewer';
+import ModelViewer from './ModelViewer';
 
 function App() {
   return (
     <div className="App">
-      <WireframeViewer />
+      <ModelViewer />
     </div>
   );
 }
