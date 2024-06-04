@@ -46,3 +46,14 @@ python3 -m http.server --directory frontend_mockup
 
 Log of what I did:
 
+```
+
+  508  rm -rf frontend_mockup/
+  509  npx create-react-app frontend_mockup
+  510  cd frontend_mockup
+  511  npm start
+
+
+
+
+```
