@@ -48,11 +48,13 @@ Log of what I did:
 
 ```
 
-  508  rm -rf frontend_mockup/
-  509  npx create-react-app frontend_mockup
-  510  cd frontend_mockup
-  511  npm start
+rm -rf frontend_mockup/
+npx create-react-app frontend_mockup
+cd frontend_mockup
+npm start
 
+
+npm install three @react-three/fiber @react-three/drei
 
 
 
