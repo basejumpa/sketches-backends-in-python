@@ -1,11 +1,18 @@
 import React from 'react';
 import { Canvas } from '@react-three/fiber';
+import { useGLTF } from '@react-three/drei';
+
+function Model() {
+    const gltf = useGLTF('model.glb');
+    return <primitive object={gltf.scene} />;
+}
 
 function ThreeDViewer() {
     return (
         <div>
-            <p>This is a 3D viewer component.</p>
-            <Canvas/>
+            <Canvas>
+                <Model />
+            </Canvas>
         </div>
     );
 }
