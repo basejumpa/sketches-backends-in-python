@@ -43,3 +43,6 @@ python3 -m http.server --directory frontend_mockup
 ### Bycatches
 
 ### Additional Comments
+
+Log of what I did:
+
