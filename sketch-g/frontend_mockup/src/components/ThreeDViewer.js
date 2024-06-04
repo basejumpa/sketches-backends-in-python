@@ -1,6 +1,6 @@
 import React from 'react';
 import { Canvas } from '@react-three/fiber';
-import { useGLTF } from '@react-three/drei';
+import { OrbitControls, useGLTF } from '@react-three/drei';
 
 function Model() {
     const gltf = useGLTF('model.glb');
@@ -10,8 +10,9 @@ function Model() {
 function ThreeDViewer() {
     return (
         <div>
-            <Canvas>
+            <Canvas style={{ height: '100vh' }}>
                 <Model />
+                <OrbitControls />
             </Canvas>
         </div>
     );
